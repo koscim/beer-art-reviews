@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :username, presence: true
   validates :email, presence: true,
-    format: { with: /.+@.+\..+/i }
+    format: { with: /\A.+@.+\..+\z/i }
   validates :encrypted_password, presence: true,
     length: { minimum: 6 }
   validates :sign_in_count, presence: true,
