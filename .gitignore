@@ -15,5 +15,7 @@
 
 /node_modules
 /yarn-error.log
+/coverage
+.env
 
 .byebug_history

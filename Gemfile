@@ -1,6 +1,7 @@
 source 'https://rubygems.org/'
 
 ruby '2.4.1'
+gem 'dotenv-rails'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -11,6 +12,10 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
