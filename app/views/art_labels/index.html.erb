@@ -1,0 +1,8 @@
+<h1>Art Labels</h1>
+
+<ul>
+  <% @art_labels.each do |label| %>
+    <li> Name: <%= label.name %><br>
+    Brewery: <%= label.brewery %></li>
+  <% end %>
+</ul>
