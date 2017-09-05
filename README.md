@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+![Build Status](https://codeship.com/projects/243941/status?branch=master)
+![Code Climate](https://codeclimate.com/github/koscim/beer-art-reviews.png)
+![Coverage Status](https://coveralls.io/repos/koscim/beer-art-reviews/badge.png)
