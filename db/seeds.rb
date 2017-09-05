@@ -17,10 +17,13 @@ Review.all.destroy_all
   )
 end
 
+first_label = ArtLabel.first.id
+last_label = ArtLabel.last.id
+
 30.times do
   Review.create(
-    feels: Faker::Lovecraft.sentences(2),
-    art_label: Faker::Number.between(1, 15),
-    user_id: Faker::Number.between(1, 30),
+    feels: Faker::Lovecraft.sentence,
+    art_label_id: Faker::Number.between(first_label, last_label),
+    user_id: Faker::Number.between(1, 30)
   )
 end
