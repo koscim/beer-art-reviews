@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :votes
+  has_many :reviews
+  has_many :art_labels
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :first_name, presence: true
@@ -13,5 +17,4 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
 end
