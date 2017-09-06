@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'art_labels#index'
 
-  resources :art_labels, only: [:index]
+  resources :art_labels, only: [:index, :new, :create, :show]
 end
