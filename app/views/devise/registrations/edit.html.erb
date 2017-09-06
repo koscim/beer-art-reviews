@@ -1,12 +1,35 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :first_name, 'First Name' %><br />
+    <%= f.text_field :first_name, autofocus: true %>
   </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :last_name, 'Last Name' %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <br />
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -21,10 +44,14 @@
     <% end %>
   </div>
 
+  <br />
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <br /><br />
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
@@ -35,6 +62,8 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
+
+<hr />
 
 <h3>Cancel my account</h3>
 
