@@ -43,3 +43,4 @@ exclude_paths:
 - vendor/
 - react/coverage/
 - app/assets/javascripts/bundle.js
+- react/webpack.config.js
