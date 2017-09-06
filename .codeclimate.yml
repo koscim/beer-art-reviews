@@ -1,2 +1,6 @@
+JavaScript: true
+Ruby: true
+
 exclude_paths:
 - "react/coverage/"
+- "app/assets/javascripts/bundle.js"
