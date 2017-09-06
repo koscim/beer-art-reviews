@@ -23,6 +23,6 @@ Things you may want to cover:
 
 * ...
 
-![Build Status](https://codeship.com/projects/243941/status?branch=master)
+![Build Status](https://codeship.com/projects/d1fac080-7471-0135-298f-6261ba794a34/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/koscim/beer-art-reviews.png)
 ![Coverage Status](https://coveralls.io/repos/koscim/beer-art-reviews/badge.png)

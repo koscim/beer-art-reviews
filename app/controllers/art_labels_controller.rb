@@ -1,4 +1,7 @@
 class ArtLabelsController < ApplicationController
+
+  # before_action :authenticate_user!
+
   def index
     @art_labels = ArtLabel.all
   end
