@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:destroy]
+  # resources :users, only: [:destroy]
 
+  # get 'admin' => 'admin#index' do
+  #   namespace :users, only: [:destroy]
+  # end
 
-  get 'admin' => 'admin#index'
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+  end
 end
