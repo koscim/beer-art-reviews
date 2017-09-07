@@ -8,6 +8,14 @@ class ArtLabelsController < ApplicationController
 
   def show
     @art_label = ArtLabel.find(params[:id])
+
+    if @art_label.user.nil?
+      @creator = "User no longer exists"
+    else
+      @creator = @art_label.user.username
+    end
+
+
     @reviews = @art_label.reviews
     @review = Review.new
   end

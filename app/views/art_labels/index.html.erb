@@ -2,7 +2,7 @@
 
 <ul>
   <% @art_labels.each do |label| %>
-    <li> Name: <%= label.name %><br>
+    <li> Name: <%= link_to label.name, art_label_path(label) %><br>
     Brewery: <%= label.brewery %></li>
   <% end %>
 </ul>
