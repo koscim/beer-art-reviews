@@ -1,0 +1,11 @@
+<h1>Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
+        <%= button_to "Delete #{user.username}?", user, method: :delete %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", root_path %>

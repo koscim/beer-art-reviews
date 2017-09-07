@@ -2,7 +2,6 @@ require "rails_helper"
 
 feature "users can add art label" do
   scenario "visitor adds new art label successfully" do
-
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
@@ -23,7 +22,6 @@ feature "users can add art label" do
     fill_in 'Beer description', with: "Robust flavor"
     fill_in 'Art description', with: "Art Deco"
     fill_in 'Beer rating', with: "4"
-    
 
     click_button "Add Art Label"
 
@@ -33,6 +31,14 @@ feature "users can add art label" do
   end
 
   scenario "visitor does not provide proper information for an art label" do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+
+    click_button 'Sign In'
+
     visit new_art_label_path
 
     click_button "Add Art Label"
