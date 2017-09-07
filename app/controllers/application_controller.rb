@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username])
   end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found (Admin)")
+    end
+  end
 end

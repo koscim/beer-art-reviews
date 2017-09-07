@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true
+  validates :role, presence: true
   validates :email,
     format: { with: /\A.+@.+\..+\z/i }
   validates :encrypted_password,
@@ -17,4 +18,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def admin?
+    role == "admin"
+  end
 end
