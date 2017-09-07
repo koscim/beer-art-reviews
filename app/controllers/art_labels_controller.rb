@@ -8,10 +8,11 @@ class ArtLabelsController < ApplicationController
 
   def show
     @art_label = ArtLabel.find(params[:id])
+    @reviews = @art_label.reviews
+    @review = Review.new
   end
 
   def new
-
     @art_label = ArtLabel.new
   end
 
