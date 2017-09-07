@@ -10,7 +10,7 @@ feature 'admin views users', %Q{
   # * If I am an authorized admin, I can see an Admin Section where I can
   #   view all of the users of my website.
   # * If I am not an authorized admin, I cannot see the Admin Section.
-  
+
   scenario 'an existing admin signs in and sees the Admin Section' do
     admin = FactoryGirl.create(:user, role: 'admin')
     user = FactoryGirl.create(:user)
