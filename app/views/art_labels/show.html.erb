@@ -1,8 +1,15 @@
 <h1><%= @art_label.name %></h1>
 
-Brewery: <%= @art_label.brewery %><br>
-Beer Description: <%= @art_label.beer_description %><br>
+<%= link_to "Edit Art Label", edit_art_label_path %>
+
 Image: <%= @art_label.image_url %><br>
+Brewery: <%= @art_label.brewery %><br>
+Beer Style: <%= @art_label.beer_style %><br>
+Art Style: <%= @art_label.art_style %><br>
+Container Type: <%= @art_label.container_type %><br>
+Beer Description: <%= @art_label.beer_description %><br>
+Art Description: <%= @art_label.art_description %><br>
+Beer Rating: <%= @art_label.beer_rating %><br>
 
 Submitted by: <%= @creator %><br>
 
