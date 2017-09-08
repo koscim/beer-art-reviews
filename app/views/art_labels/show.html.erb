@@ -2,14 +2,20 @@
 
 Brewery: <%= @art_label.brewery %><br>
 Beer Description: <%= @art_label.beer_description %><br>
-Image: <%= @art_label.image_url %><br>
-
-Submitted by: <%= @creator %><br>
+Image: <%= image_tag(@art_label.label_photo, height: "200") %>
+<br>
+Submitted by:
+<% if @art_label.user %>
+  <%= image_tag(@art_label.user.profile_photo, height: "32") %>
+<% end %>
+<%= @creator %>
+<br>
 
 <h3>Reviews:</h3>
 <ul>
   <% @reviews.each do |review| %>
     <li>
+      <%= image_tag(review.user.profile_photo, height: "32") %><br />
       Username: <%= review.user.username %><br />
       Feels: <%= review.feels %><br />
       Intoxication Level: <%= review.intoxication_level %><br />

@@ -15,6 +15,7 @@ class User < ApplicationRecord
     length: { minimum: 6 }
   validates :sign_in_count, presence: true,
     numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  mount_uploader :profile_photo, ProfilePhotoUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -44,6 +44,6 @@ class ArtLabelsController < ApplicationController
   private
 
   def art_label_params
-    params.require(:art_label).permit(:name, :image_url, :brewery, :beer_style, :art_style, :container_type, :beer_description, :art_description, :beer_rating)
+    params.require(:art_label).permit(:name, :label_photo, :brewery, :beer_style, :art_style, :container_type, :beer_description, :art_description, :beer_rating)
   end
 end
