@@ -14,6 +14,7 @@ class ArtLabelsController < ApplicationController
     else
       @creator = @art_label.user.username
     end
+
     @reviews = @art_label.reviews
     @review = Review.new
   end

@@ -10,10 +10,23 @@ Submitted by: <%= @creator %><br>
 <ul>
   <% @reviews.each do |review| %>
     <li>
-      <%= review.feels %>
+      Username: <%= review.user.username %><br />
+      Feels: <%= review.feels %><br />
+      Intoxication Level: <%= review.intoxication_level %><br />
+      Joy: <%= review.joy %> out of 5<br />
+      Fear: <%= review.fear %> out of 5<br />
+      Sadness: <%= review.sadness %> out of 5<br />
+      Disgust: <%= review.disgust %> out of 5<br />
+      Anger: <%= review.anger %> out of 5<br />
+      Cleverness: <%= review.cleverness %> out of 5<br />
+      Collectability: <%= review.collectability %> out of 5<br />
+      Controversiality: <%= review.controversiality %> out of 5<br />
+      Buyability: <%= review.buyability %> out of 5<br />
+
       <% if current_user && current_user.admin? %>
        <%= button_to 'Delete', art_label_review_path(@art_label, review), data: { confirm: "Are you sure?" }, method: :delete %>
      <% end %>
+
     </li>
   <% end %>
 </ul>
@@ -26,7 +39,7 @@ Submitted by: <%= @creator %><br>
   <%= f.text_field :feels %><br /><br />
 
   <%= f.label :intoxication_level, 'Intoxication Level:' %>
-  <%= f.collection_select(:intoxication_level, [[1, 'Buzzed'],[2, 'More Buzzed'],[3, 'Drunk'],[4, 'More Drunk'],[5, 'Wasted']], :first, :last) %>  <br /><br />
+  <%= f.collection_select(:intoxication_level, [['Not Intoxicated'],['Buzzed'],['More Buzzed'],['Drunk'],['More Drunk'],['Wasted']], :first, :first) %>  <br /><br />
 
   <%= f.label :joy, 'Joy:' %>
   <%= f.collection_radio_buttons(:joy, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
