@@ -4,6 +4,9 @@
   <% @art_labels.each do |label| %>
     <li> Name: <%= link_to label.name, art_label_path(label) %><br>
     Brewery: <%= label.brewery %></li>
+    <% if current_user && current_user.admin? %>
+     <%= button_to 'Delete', label, method: :delete %>
+   <% end %>
   <% end %>
 </ul>
 

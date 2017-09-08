@@ -8,8 +8,27 @@
 ArtLabel.all.destroy_all
 Review.all.destroy_all
 
+5.times do
+  username = Faker::Space.moon
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: username,
+    email: "#{username}@gmail.com",
+    role: "member"
+  )
+end
+
+User.create!(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  username: Faker::Space.moon,
+  email: Faker::Internet.email,
+  role: "admin"
+)
+
 15.times do
-  ArtLabel.create(
+  ArtLabel.create!(
     name: Faker::Beer.name,
     image_url: Faker::Company.logo,
     brewery: Faker::Lovecraft.deity,
@@ -17,13 +36,13 @@ Review.all.destroy_all
   )
 end
 
-first_label = ArtLabel.first.id
-last_label = ArtLabel.last.id
-
-30.times do
-  Review.create(
-    feels: Faker::Lovecraft.sentence,
-    art_label_id: Faker::Number.between(first_label, last_label),
-    user_id: Faker::Number.between(1, 30)
-  )
-end
+# first_label = ArtLabel.first.id
+# last_label = ArtLabel.last.id
+#
+# 30.times do
+#   Review.create(
+#     feels: Faker::Lovecraft.sentence,
+#     art_label_id: Faker::Number.between(first_label, last_label),
+#     user_id: Faker::Number.between(1, 30)
+#   )
+# end

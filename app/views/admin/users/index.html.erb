@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
+      <p>Role: <%= user.role %></p>
+      <%= button_to "Delete #{user.username}?", admin_user_path(user), method: :delete %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", root_path %>
