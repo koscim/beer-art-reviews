@@ -35,6 +35,12 @@ class ArtLabelsController < ApplicationController
     end
   end
 
+  def destroy
+    @art_label = ArtLabel.find(params[:id])
+    @art_label.destroy
+    redirect_to root_path
+  end
+
   private
 
   def art_label_params

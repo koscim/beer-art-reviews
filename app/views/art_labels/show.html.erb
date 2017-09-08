@@ -22,6 +22,11 @@ Submitted by: <%= @creator %><br>
       Collectability: <%= review.collectability %> out of 5<br />
       Controversiality: <%= review.controversiality %> out of 5<br />
       Buyability: <%= review.buyability %> out of 5<br />
+
+      <% if current_user && current_user.admin? %>
+       <%= button_to 'Delete', art_label_review_path(@art_label, review), data: { confirm: "Are you sure?" }, method: :delete %>
+     <% end %>
+
     </li>
   <% end %>
 </ul>

@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'art_labels#index'
 
-  resources :art_labels, only: [:index, :new, :create, :show] do
-    resources :reviews, only: [:index, :new, :create, :show]
+  resources :art_labels, only: [:index, :new, :create, :show, :destroy] do
+    resources :reviews, only: [:index, :new, :create, :show, :destroy]
   end
 
 
