@@ -27,8 +27,7 @@ feature 'admin deletes users', %Q{
     expect(page).to have_content(user.first_name)
     expect(page).to have_content(user.last_name)
     expect(page).to have_content(user.username)
-
-    click_button 'Delete joeschmoe2?'
+    click_button "Delete #{user.username}"
 
     expect(page).to_not have_content(user.first_name)
     expect(page).to_not have_content(user.last_name)

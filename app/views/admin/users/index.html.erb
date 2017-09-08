@@ -5,7 +5,7 @@
     <li>
       <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
       <p>Role: <%= user.role %></p>
-      <%= button_to "Delete #{user.username}?", admin_user_path(user), method: :delete %> </li>
+      <%= button_to "Delete #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %> </li>
   <% end %>
 </ul>
 

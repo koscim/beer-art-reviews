@@ -8,6 +8,14 @@ class ArtLabelsController < ApplicationController
 
   def show
     @art_label = ArtLabel.find(params[:id])
+
+    if @art_label.user.nil?
+      @creator = "User no longer exists"
+    else
+      @creator = @art_label.user.username
+    end
+    @reviews = @art_label.reviews
+    @review = Review.new
   end
 
   def new
@@ -24,6 +32,12 @@ class ArtLabelsController < ApplicationController
       flash[:notice] = @art_label.errors.full_messages.join(', ')
       render action: 'new'
     end
+  end
+
+  def destroy
+    @art_label = ArtLabel.find(params[:id])
+    @art_label.destroy
+    redirect_to root_path
   end
 
   private
