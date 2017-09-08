@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :review do
     feels Faker::Hacker.say_something_smart
-    intoxication_level Faker::Number.between(1, 5)
+    intoxication_level [['Not Intoxicated'],['Buzzed'],['More Buzzed'],['Drunk'],['More Drunk'],['Wasted']].sample
     joy Faker::Number.between(1, 5)
     fear Faker::Number.between(1, 5)
     sadness Faker::Number.between(1, 5)
