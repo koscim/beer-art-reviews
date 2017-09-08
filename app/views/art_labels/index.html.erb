@@ -2,10 +2,10 @@
 
 <ul>
   <% @art_labels.each do |label| %>
-    <li> Name: <%= label.name %><br>
+    <li> Name: <%= link_to label.name, art_label_path(label) %><br>
     Brewery: <%= label.brewery %></li>
     <% if current_user && current_user.admin? %>
-     <%= button_to 'Delete', label, method: :delete %>
+     <%= button_to 'Delete', label, data: { confirm: "Are you sure?" }, method: :delete %>
    <% end %>
   <% end %>
 </ul>

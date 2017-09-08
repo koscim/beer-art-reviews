@@ -41,5 +41,7 @@ feature 'admin views users', %Q{
     expect(page).to have_content('Welcome Back!')
     expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Admin Section')
+
+    expect{visit admin_users_path}.to raise_error(ActionController::RoutingError)
   end
 end
