@@ -1,6 +1,6 @@
 class ArtLabelsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorize_user, except: [:index, :show, :new, :create]
+  before_action :authorize_user, only: [:destroy]
 
   def index
     @art_labels = ArtLabel.all
@@ -32,6 +32,21 @@ class ArtLabelsController < ApplicationController
     else
       flash[:notice] = @art_label.errors.full_messages.join(', ')
       render action: 'new'
+    end
+  end
+
+  def edit
+    @art_label = ArtLabel.find(params[:id])
+  end
+
+  def update
+    @art_label = ArtLabel.find(params[:id])
+
+    if @art_label.update(art_label_params)
+      redirect_to @art_label, notice: "Art Label Successfully Posted!"
+    else
+      flash[:notice] = @art_label.errors.full_messages.join(', ')
+      render action: 'edit'
     end
   end
 
