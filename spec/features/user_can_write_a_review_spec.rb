@@ -44,7 +44,7 @@ feature "authenticated user adds a review" do
 
     click_button "Submit Review"
 
-    expect(page).to have_content("User must exist")
+    expect(page).to have_content("You need to sign in or sign up before continuing.")
   end
 
   scenario "authenticated user attempts to write a review without all required information and fails" do
