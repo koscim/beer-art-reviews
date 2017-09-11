@@ -55,10 +55,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave_direct (0.0.15)
-      carrierwave
-      fog
-      uuidtools
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     coveralls (0.8.21)
@@ -364,7 +360,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    uuidtools (2.1.5)
     valid_attribute (2.0.0)
     warden (1.2.7)
       rack (>= 1.0)
@@ -382,12 +377,13 @@ DEPENDENCIES
   bundler
   capybara
   carrierwave
-  carrierwave_direct
   coveralls
   devise
   dotenv-rails
   factory_girl_rails
   faker
+  fog
+  fog-aws
   jquery-rails
   launchy
   listen (~> 3.0.5)

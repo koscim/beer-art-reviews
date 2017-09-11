@@ -1,0 +1,34 @@
+<h1>Edit <%= @art_label.name %>!</h1>
+
+<%= form_for @art_label do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :image_url, 'Image' %>
+  <%= f.text_field :image_url %><br />
+
+  <%= f.label :brewery %>
+  <%= f.text_field :brewery %><br />
+
+  <%= f.label :beer_style %>
+  <%= f.text_field :beer_style %><br />
+
+  <%= f.label :art_style %>
+  <%= f.text_field :art_style %><br />
+
+  <%= f.label :container_type %>
+  <%= f.text_field :container_type %><br />
+
+  <%= f.label :beer_description %>
+  <%= f.text_field :beer_description %><br />
+
+  <%= f.label :art_description %>
+  <%= f.text_field :art_description %><br />
+
+  <%= f.label :beer_rating %>
+  <%= f.text_field :beer_rating %><br />
+
+  <%= f.submit "Submit Edited #{@art_label.name}" %>
+
+<% end %>
