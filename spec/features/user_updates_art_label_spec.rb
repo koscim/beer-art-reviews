@@ -31,7 +31,7 @@ feature "as an authenticated user I want to update an art label so that I can co
 
     click_button "Submit Edited Racer 5 India Pale Ale, Bear Republic Brew"
 
-    expect(page).to have_content "Art Label Successfully Posted!"
+    expect(page).to have_content "Art Label Successfully Updated!"
     expect(page).to have_content "Growler"
   end
 

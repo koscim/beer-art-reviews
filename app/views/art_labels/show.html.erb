@@ -1,6 +1,8 @@
 <h1><%= @art_label.name %></h1>
 
-<%= link_to "Edit Art Label", edit_art_label_path %>
+<% if current_user == @art_label.user %>
+  <%= link_to "Edit Art Label", edit_art_label_path %>
+<% end %>
 
 Image: <%= @art_label.image_url %><br>
 Brewery: <%= @art_label.brewery %><br>
@@ -29,8 +31,11 @@ Submitted by: <%= @creator %><br>
       Collectability: <%= review.collectability %> out of 5<br />
       Controversiality: <%= review.controversiality %> out of 5<br />
       Buyability: <%= review.buyability %> out of 5<br />
+      <% if current_user == review.user %>
+        <%= link_to "Edit Review", edit_art_label_review_path(@art_label, review) %>
+      <% end %>
 
-      <% if current_user && current_user.admin? %>
+      <% if current_user && current_user.admin? || current_user && current_user == review.user%>
        <%= button_to 'Delete', art_label_review_path(@art_label, review), data: { confirm: "Are you sure?" }, method: :delete %>
      <% end %>
 

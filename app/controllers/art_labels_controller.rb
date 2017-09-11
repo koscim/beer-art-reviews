@@ -42,10 +42,15 @@ class ArtLabelsController < ApplicationController
   def update
     @art_label = ArtLabel.find(params[:id])
 
-    if @art_label.update(art_label_params)
-      redirect_to @art_label, notice: "Art Label Successfully Posted!"
+    if current_user == @art_label.user || current_user.role == 'admin'
+      if @art_label.update(art_label_params)
+        redirect_to @art_label, notice: "Art Label Successfully Updated!"
+      else
+        flash[:notice] = @art_label.errors.full_messages.join(', ')
+        render action: 'edit'
+      end
     else
-      flash[:notice] = @art_label.errors.full_messages.join(', ')
+      flash[:notice] = "Invalid user. You didn't create this!"
       render action: 'edit'
     end
   end
