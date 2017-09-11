@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :art_label do
     name Faker::Beer.name
-    image_url Faker::Company.logo
+    label_photo { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'beers', 'logos', 'mdqdt.jpg' ))}
     brewery Faker::Lovecraft.deity
     beer_style Faker::Beer.style
     art_style "Art Deco"

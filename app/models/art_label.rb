@@ -3,6 +3,7 @@ class ArtLabel < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
-  validates :image_url, presence: true
+  validates :label_photo, presence: true
   validates :brewery, presence: true
+  mount_uploader :label_photo, LabelPhotoUploader
 end

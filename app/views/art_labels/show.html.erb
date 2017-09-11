@@ -4,12 +4,18 @@
   <%= link_to "Edit Art Label", edit_art_label_path %>
 <% end %>
 
-Image: <%= @art_label.image_url %><br>
+Image: <%= image_tag(@art_label.label_photo, height: "200") %><br>
 Brewery: <%= @art_label.brewery %><br>
 Beer Style: <%= @art_label.beer_style %><br>
 Art Style: <%= @art_label.art_style %><br>
 Container Type: <%= @art_label.container_type %><br>
 Beer Description: <%= @art_label.beer_description %><br>
+Submitted by:
+<% if @art_label.user %>
+  <%= image_tag(@art_label.user.profile_photo, height: "32") %>
+<% end %>
+<%= @creator %>
+<br>
 Art Description: <%= @art_label.art_description %><br>
 Beer Rating: <%= @art_label.beer_rating %><br>
 
@@ -19,6 +25,7 @@ Submitted by: <%= @creator %><br>
 <ul>
   <% @reviews.each do |review| %>
     <li>
+      <%= image_tag(review.user.profile_photo, height: "32") %><br />
       Username: <%= review.user.username %><br />
       Feels: <%= review.feels %><br />
       Intoxication Level: <%= review.intoxication_level %><br />
