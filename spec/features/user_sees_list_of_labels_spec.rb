@@ -5,7 +5,7 @@ feature 'user sees list of all labels', %Q{
   I want to view a list of items
   So that I can pick items to review
 } do
-  scenario 'user visits index page' do
+  pending 'user visits index page' do
 
     art_label_1 = FactoryGirl.create(:art_label)
     art_label_2 = FactoryGirl.create(:art_label)

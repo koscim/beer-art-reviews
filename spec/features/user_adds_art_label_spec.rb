@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "users can add art label" do
-  scenario "visitor adds new art label successfully" do
+  pending "visitor adds new art label successfully" do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
@@ -30,7 +30,7 @@ feature "users can add art label" do
     expect(page).to have_content "Robust flavor"
   end
 
-  scenario "visitor does not provide proper information for an art label" do
+  pending "visitor does not provide proper information for an art label" do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'

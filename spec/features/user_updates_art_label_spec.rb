@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "as an authenticated user I want to update an art label so that I can correct errors or provide new information" do
-  scenario "authenticated user updates existing art label successfully" do
+  pending "authenticated user updates existing art label successfully" do
 
     user = FactoryGirl.create(:user)
     visit root_path
@@ -35,7 +35,7 @@ feature "as an authenticated user I want to update an art label so that I can co
     expect(page).to have_content "Growler"
   end
 
-  scenario "authenticated user does not provide proper information to update an art label" do
+  pending "authenticated user does not provide proper information to update an art label" do
 
     user = FactoryGirl.create(:user)
     visit root_path
