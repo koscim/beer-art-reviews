@@ -66,6 +66,8 @@ feature "as the user who posted a review I can update my review so that I can co
 
     click_button 'Update Review'
 
+
     expect(page).to have_content("Invalid user. You didn't create this!")
+    expect(page).to have_content(art_label.name)
   end
 end
