@@ -6,7 +6,6 @@ feature "as the user who posted a review I can update my review so that I can co
     user = FactoryGirl.create(:user)
     review = FactoryGirl.create(:review, user: user)
 
-
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
