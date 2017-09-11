@@ -10,7 +10,7 @@ engines:
     enabled: true
     config:
       languages:
-        ruby:
+      - ruby:
           mass_threshold:100
       - javascript
       - python
