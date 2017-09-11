@@ -14,11 +14,7 @@ feature "users can add art label" do
     expect(page).to have_content "New Art Label!"
 
     fill_in 'Name', with: "Racer 5 India Pale Ale, Bear Republic Brew"
-    # click_button "Choose File"
     page.attach_file('art_label[label_photo]', Rails.root + 'spec/support/beers/logos/mdqdt.jpg')
-    # fill_in 'Image', with: "https://pigment.github.io/fake-logos/logos/medium/color/8.png"
-    # attach_file_for_direct_upload("#{Rails.root}/spec/support/beers/logos/mdqdt.jpg")
-    # upload_directly(LabelPhotoUploader.new, "Choose File")
     fill_in 'Brewery', with: "Tsathoggua"
     fill_in 'Beer style', with: "IPA"
     fill_in 'Art style', with: "Art Deco"

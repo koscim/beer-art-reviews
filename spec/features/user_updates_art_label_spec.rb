@@ -14,7 +14,6 @@ feature "as an authenticated user I want to update an art label so that I can co
     click_link 'Add New Art Label'
 
     fill_in 'Name', with: "Racer 5 India Pale Ale, Bear Republic Brew"
-    # fill_in 'Image', with: "https://pigment.github.io/fake-logos/logos/medium/color/8.png"
     page.attach_file('art_label[label_photo]', Rails.root + 'spec/support/beers/logos/mdqdt.jpg')
     fill_in 'Brewery', with: "Tsathoggua"
     fill_in 'Beer style', with: "IPA"
