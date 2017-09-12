@@ -26,7 +26,7 @@ describe('ArtLabelShowContainer', () => {
               "cleverness": null,
               "collectability": null,
               "controversiality": null,
-              "buyability": null,
+              "buyability": null
             }
           ]
         }

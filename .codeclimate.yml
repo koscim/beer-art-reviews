@@ -29,7 +29,6 @@ ratings:
   - "**.rb"
   - "**.rhtml"
   - "**.slim"
-  - "**.css"
   - "**.inc"
   - "**.js"
   - "**.jsx"

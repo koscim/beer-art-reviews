@@ -5,7 +5,7 @@ class ArtLabelsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      art_labels: [],
+      art_labels: []
     }
   }
 

@@ -15,7 +15,7 @@ describe('ReviewShow', () => {
     cleverness: 4,
     collectability: 3,
     controversiality: 1,
-    buyability: 4,
+    buyability: 4
   }
 
   beforeEach(() => {
