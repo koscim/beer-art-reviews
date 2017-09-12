@@ -7,7 +7,11 @@ class ArtLabelShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      art_label: {},
+      art_label: {
+        user: {
+          username: ""
+        }
+      },
       reviews: []
     }
   }
@@ -42,8 +46,9 @@ class ArtLabelShowContainer extends Component {
         <ArtLabelShow
           key={this.state.art_label.id}
           id={this.state.art_label.id}
-          name={this.state.art_label.name}
+          art_label={this.state.art_label}
         />
+        <h2>Reviews:</h2>
         {reviews}
         <div className="button" onClick={browserHistory.goBack} >
           Back

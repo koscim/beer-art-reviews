@@ -54,7 +54,11 @@ describe('ArtLabelShowContainer', () => {
 
   it('should have the specified initial state', () => {
     expect(wrapper.state()).toEqual({
-      art_label: {},
+      art_label: {
+        user: {
+          username: ""
+        }
+      },
       reviews: []
     })
   });

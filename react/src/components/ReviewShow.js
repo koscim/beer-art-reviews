@@ -4,7 +4,6 @@ import { browserHistory, Link } from 'react-router';
 const ReviewShow = (props) => {
   return(
     <div>
-      Review Show!
       <p>
         {props.username}
         <br />
@@ -29,6 +28,8 @@ const ReviewShow = (props) => {
         Controversiality: {props.review.controversiality}
         <br />
         Buyability: {props.review.buyability}
+        <br />
+        Votes: {props.review.votes}
       </p>
     </div>
   )
