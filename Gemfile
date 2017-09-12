@@ -13,6 +13,8 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog-aws"
 gem 'fog'
+gem 'mailcatcher'
+gem 'sendgrid-ruby'
 
 group :development do
   gem 'listen', '~> 3.0.5'
