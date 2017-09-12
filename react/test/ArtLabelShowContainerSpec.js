@@ -12,7 +12,7 @@ describe('ArtLabelShowContainer', () => {
           "id": 1,
           "name": "CocoPuffs",
           "brewery": "chocolate-y",
-          "image_url": "image.png",
+          "label_photo": "image.png",
           "reviews": [
             {
               "id": 5,
@@ -55,6 +55,9 @@ describe('ArtLabelShowContainer', () => {
   it('should have the specified initial state', () => {
     expect(wrapper.state()).toEqual({
       art_label: {
+        label_photo: {
+          url: ""
+        },
         user: {
           username: ""
         }
@@ -65,15 +68,12 @@ describe('ArtLabelShowContainer', () => {
 
   it('should have a new state after fetch', done => {
     setTimeout(() => {
-      console.log(wrapper.state())
-      console.log(wrapper.state().art_label)
-      console.log(wrapper.state().art_label.reviews)
       expect(wrapper.state()).toEqual({
         art_label: {
           id: 1,
           name: "CocoPuffs",
           brewery: "chocolate-y",
-          image_url: "image.png",
+          label_photo: "image.png",
           reviews: [
             {
               id: 5,
@@ -111,15 +111,4 @@ describe('ArtLabelShowContainer', () => {
       done();
     }, 0)
   });
-
-  // it('should render a CerealShow with specific props', done => {
-  //   setTimeout(() => {
-  //     expect(wrapper.find(CerealShow).props()).toEqual({
-  //       "id": 1,
-  //       "name": "CocoPuffs",
-  //       "description": "chocolate-y"
-  //     })
-  //     done();
-  //   }, 0)
-  // })
 })

@@ -12,7 +12,7 @@ describe('ArtLabelsIndexContainer', () => {
           "id": 1,
           "name": "CocoPuffs",
           "brewery": "chocolate-y",
-          "image_url": "image.png"
+          "label_photo": "image.png"
         }
       ]}
       ), {
@@ -49,7 +49,7 @@ describe('ArtLabelsIndexContainer', () => {
             "id": 1,
             "name": "CocoPuffs",
             "brewery": "chocolate-y",
-            "image_url": "image.png"
+            "label_photo": "image.png"
           }
         ]
       })

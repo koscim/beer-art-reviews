@@ -32,7 +32,7 @@ User.create!(
 15.times do
   art_label = ArtLabel.create!(
     name: Faker::Beer.name,
-    image_url: Faker::Company.logo,
+    label_photo: Rails.root.join('spec', 'support', 'beers', 'logos', 'mdqdt.jpg' ).open,
     brewery: Faker::Lovecraft.deity,
     beer_style: Faker::Beer.style,
     user: User.find(1 + rand(6))

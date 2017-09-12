@@ -28,7 +28,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
       expect(returned_json["reviews"][0]["art_label"]["name"]).to eq review.art_label.name
       expect(returned_json["reviews"][0]["art_label"]["brewery"]).to eq review.art_label.brewery
-      expect(returned_json["reviews"][0]["art_label"]["image_url"]).to eq review.art_label.image_url
+      expect(returned_json["reviews"][0]["art_label"]["label_photo"]).to eq review.art_label.label_photo
       expect(returned_json["reviews"][0]["art_label"]["beer_style"]).to eq review.art_label.beer_style
       expect(returned_json["reviews"][0]["art_label"]["art_style"]).to eq review.art_label.art_style
       expect(returned_json["reviews"][0]["art_label"]["container_type"]).to eq review.art_label.container_type

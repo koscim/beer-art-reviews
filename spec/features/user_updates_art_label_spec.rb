@@ -14,7 +14,7 @@ feature "as an authenticated user I want to update an art label so that I can co
     click_link 'Add New Art Label'
 
     fill_in 'Name', with: "Racer 5 India Pale Ale, Bear Republic Brew"
-    fill_in 'Image', with: "https://pigment.github.io/fake-logos/logos/medium/color/8.png"
+    page.attach_file('art_label[label_photo]', Rails.root + 'spec/support/beers/logos/mdqdt.jpg')
     fill_in 'Brewery', with: "Tsathoggua"
     fill_in 'Beer style', with: "IPA"
     fill_in 'Art style', with: "Art Deco"
@@ -31,7 +31,7 @@ feature "as an authenticated user I want to update an art label so that I can co
 
     click_button "Submit Edited Racer 5 India Pale Ale, Bear Republic Brew"
 
-    expect(page).to have_content "Art Label Successfully Posted!"
+    expect(page).to have_content "Art Label Successfully Updated!"
     expect(page).to have_content "Growler"
   end
 
@@ -48,7 +48,7 @@ feature "as an authenticated user I want to update an art label so that I can co
     click_link 'Add New Art Label'
 
     fill_in 'Name', with: "Racer 5 India Pale Ale, Bear Republic Brew"
-    fill_in 'Image', with: "https://pigment.github.io/fake-logos/logos/medium/color/8.png"
+    page.attach_file('art_label[label_photo]', Rails.root + 'spec/support/beers/logos/mdqdt.jpg')
     fill_in 'Brewery', with: "Tsathoggua"
     fill_in 'Beer style', with: "IPA"
     fill_in 'Art style', with: "Art Deco"
@@ -62,13 +62,11 @@ feature "as an authenticated user I want to update an art label so that I can co
     click_link "Edit Art Label"
 
     fill_in 'Name', with: ""
-    fill_in 'Image', with: ""
     fill_in 'Brewery', with: ""
 
     click_button "Submit Edited Racer 5 India Pale Ale, Bear Republic Brew"
 
     expect(page).to have_content "Brewery can't be blank"
     expect(page).to have_content "Name can't be blank"
-    expect(page).to have_content "Image url can't be blank"
   end
 end

@@ -11,6 +11,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'active_model_serializers', '~> 0.8.3'
+gem 'carrierwave'
+gem "fog-aws"
+gem 'fog'
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -31,6 +34,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'faker'
+  gem 'dotenv-rails'
   gem "database_cleaner"
 end
 

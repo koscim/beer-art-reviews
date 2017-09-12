@@ -12,6 +12,9 @@ describe('ArtLabelShow', () => {
     beer_description: "yayyyyyyy",
     art_description: "double yayyyyyyyy",
     beer_rating: 5,
+    label_photo: {
+      url: "https://beer-art-reviews-development.s3.amazonaws.com/uploads/art_label/label_photo/1/mdqdt.jpg"
+    },
     user: {
       username: "barthbart"
     }
@@ -24,6 +27,13 @@ describe('ArtLabelShow', () => {
       />
     )
   });
+
+  it('renders an image with a height of 200', () => {
+    expect(wrapper.find('img')).toBePresent()
+    expect(wrapper.find('img').at(0).prop('src')).toBe("https://beer-art-reviews-development.s3.amazonaws.com/uploads/art_label/label_photo/1/mdqdt.jpg")
+    expect(wrapper.find('img').at(0).prop('height')).toBe("200")
+
+  })
 
   it('renders an h2 tag with the art label name', () => {
     expect(wrapper.find('h2')).toBePresent()

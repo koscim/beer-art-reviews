@@ -8,6 +8,9 @@ class ArtLabelShowContainer extends Component {
     super(props);
     this.state = {
       art_label: {
+        label_photo: {
+          url: ""
+        },
         user: {
           username: ""
         }
