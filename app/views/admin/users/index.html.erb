@@ -6,6 +6,11 @@
       <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
       <p>Role: <%= user.role %></p>
       <%= button_to "Delete #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %> </li>
+      <% if user.role == 'member' %>
+        <%= button_to "Promote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put %> </li>
+      <% else %>
+        <%= button_to "Demote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put %> </li>
+      <% end %>
   <% end %>
 </ul>
 
