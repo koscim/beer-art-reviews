@@ -11,7 +11,7 @@ feature 'user deletes their created review', %Q{
   #   Delete button deletes the user's review if and
   #   only if the user created the review
 
-  scenario 'authorized user can delete their review' do
+  pending 'authorized user can delete their review' do
     user = FactoryGirl.create(:user)
     review = FactoryGirl.create(:review, user: user)
     art_label = review.art_label

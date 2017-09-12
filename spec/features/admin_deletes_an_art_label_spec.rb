@@ -10,7 +10,7 @@ feature 'admin deletes art label', %Q{
   # * If I am an authorized admin, I can see a delete button on my index
   #   art label page that I can use to delete an art label.
 
-  scenario 'as an admin I can delete certain art labels' do
+  pending 'as an admin I can delete certain art labels' do
     admin = FactoryGirl.create(:user, role: 'admin')
     art_label = FactoryGirl.create(:art_label)
     visit root_path
