@@ -6,8 +6,9 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @art_label = ArtLabel.find(params[:art_label_id])
     @review.art_label = @art_label
+    @full_name = "#{@review.user.first_name} #{@review.user.last_name}"
     if @review.save
-      ReviewMailer.new_review(@review).deliver_later
+      ReviewMailer.new_review(@review).deliver_now
       redirect_to @art_label, notice: "Review Submitted Successfully!"
     else
       flash[:notice] = @review.errors.full_messages.join(', ')
