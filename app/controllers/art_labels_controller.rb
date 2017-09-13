@@ -3,12 +3,7 @@ class ArtLabelsController < ApplicationController
   before_action :authorize_user, only: [:destroy]
 
   def index
-    # Search function:
-    if params[:search]
-      @art_labels = ArtLabel.search(params[:search]).order("created_at DESC")
-    else
-      @art_labels = ArtLabel.all
-    end
+    @art_labels = ArtLabel.all
   end
 
   def show
@@ -69,6 +64,6 @@ class ArtLabelsController < ApplicationController
   private
 
   def art_label_params
-    params.require(:art_label).permit(:name, :label_photo, :brewery, :beer_style, :art_style, :container_type, :beer_description, :art_description, :beer_rating)
+    params.require(:art_label).permit(:name, :label_photo, :brewery, :beer_style, :art_style, :container_type, :beer_description, :art_description, :beer_rating, :term)
   end
 end
