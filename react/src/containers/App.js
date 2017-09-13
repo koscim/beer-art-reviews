@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router';
 import ArtLabelsIndexContainer from './ArtLabelsIndexContainer';
 import ArtLabelShowContainer from './ArtLabelShowContainer';
-
+// import ArtLabelFormContainer from './ArtLabelFormContainer';
 const App = (props) => {
   return (
     <Router history={browserHistory} >
