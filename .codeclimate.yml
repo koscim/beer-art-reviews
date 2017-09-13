@@ -12,7 +12,8 @@ engines:
       languages:
       - ruby:
           mass_threshold: 100
-      - javascript
+      - javascript:
+          mass_threshold: 100
       - python
       - php
   eslint:

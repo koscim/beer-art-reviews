@@ -10,7 +10,7 @@ feature 'admin deletes reviews', %Q{
   # * If I am an authorized admin, I can see a delete button on my art
   #   labels show page where I can delete reviews for art labels.
 
-  scenario 'as an admin I can delete certain reviews' do
+  pending 'as an admin I can delete certain reviews' do
     admin = FactoryGirl.create(:user, role: 'admin')
     review = FactoryGirl.create(:review)
     art_label = review.art_label

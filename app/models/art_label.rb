@@ -6,4 +6,8 @@ class ArtLabel < ApplicationRecord
   validates :label_photo, presence: true
   validates :brewery, presence: true
   mount_uploader :label_photo, LabelPhotoUploader
+
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
 end

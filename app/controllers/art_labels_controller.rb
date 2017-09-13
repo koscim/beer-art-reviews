@@ -3,7 +3,12 @@ class ArtLabelsController < ApplicationController
   before_action :authorize_user, only: [:destroy]
 
   def index
-    @art_labels = ArtLabel.all
+    # Search function:
+    if params[:search]
+      @art_labels = ArtLabel.search(params[:search]).order("created_at DESC")
+    else
+      @art_labels = ArtLabel.all
+    end
   end
 
   def show
