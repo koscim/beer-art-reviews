@@ -14,6 +14,8 @@ gem 'active_model_serializers', '~> 0.8.3'
 gem 'carrierwave'
 gem "fog-aws"
 gem 'fog'
+gem 'mailcatcher'
+gem 'sendgrid-ruby'
 
 group :development do
   gem 'listen', '~> 3.0.5'

@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
     @art_label = ArtLabel.find(params[:art_label_id])
     @review.art_label = @art_label
     if @review.save
+      ReviewMailer.new_review(@review).deliver_now
       redirect_to @art_label, notice: "Review Submitted Successfully!"
     else
       flash[:notice] = @review.errors.full_messages.join(', ')
