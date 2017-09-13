@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "users can add art label" do
-  pending "visitor adds new art label successfully" do
+  scenario "visitor adds new art label successfully" do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
@@ -25,12 +25,11 @@ feature "users can add art label" do
 
     click_button "Add Art Label"
 
-    expect(page).to have_content "Art Label Successfully Posted!"
-    expect(page).to have_content "Racer 5 India Pale Ale, Bear Republic Brew"
-    expect(page).to have_content "Robust flavor"
+    art_label = ArtLabel.find_by(name: "Racer 5 India Pale Ale, Bear Republic Brew")
+    expect(art_label).to_not be_nil
   end
 
-  pending "visitor does not provide proper information for an art label" do
+  scenario "visitor does not provide proper information for an art label" do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'

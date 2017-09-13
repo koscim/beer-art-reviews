@@ -16,7 +16,6 @@ class ArtLabelsController < ApplicationController
     end
 
     @reviews = @art_label.reviews
-    @review = Review.new
   end
 
   def new

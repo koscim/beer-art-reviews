@@ -43,6 +43,9 @@ class ArtLabelShowContainer extends Component {
         />
       )
     })
+
+    let newAddress = `${this.state.art_label.id}/reviews/new`
+
     return(
       <div className='container'>
         Art Label Show!!!!
@@ -53,6 +56,8 @@ class ArtLabelShowContainer extends Component {
         />
         <h2>Reviews:</h2>
         {reviews}
+        <a href={newAddress}><h2>Create a New Review:</h2></a>
+
         <div className="button" onClick={browserHistory.goBack} >
           Back
         </div>
