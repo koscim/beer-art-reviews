@@ -18,7 +18,7 @@ class ArtLabelsIndexContainer extends Component {
       credentials: 'same-origin'
     }).then(response => response.json())
     .catch((thing) => console.log("so sad"))
-    this.setState({art_labels: this.state.art_labels.filter(art_label => art_label.id != artLabelId)})
+    this.setState({art_labels: this.state.art_labels.filter(art_label => art_label.id !== artLabelId)})
   }
 
   componentDidMount() {
