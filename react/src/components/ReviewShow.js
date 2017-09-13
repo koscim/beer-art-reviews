@@ -6,9 +6,6 @@ class ReviewShow extends Component {
     super(props);
     this.state = {
       votes: [
-        {
-        vote_number: 0
-        }
       ],
       currentUser: {},
       voteTotal: 0
@@ -45,6 +42,9 @@ class ReviewShow extends Component {
     .catch((thing) => console.log("so sad"))
   }
 
+  aggregateReview(){
+  }
+
   upVote() {
     let upVotePayload = {
       review_id: this.props.review.id,
@@ -57,10 +57,11 @@ class ReviewShow extends Component {
       body: JSON.stringify(upVotePayload)
     }).then(response => response.json())
     .then(body => {
-      let votePayload = this.state.votes.concat(1)
-      this.setState({ votes: upVotePayload })
+      let votePayload = this.state.votes.concat(upVotePayload)
+      this.setState({ votes: votePayload })
     })
     .catch((thing) => console.log("so sad"))
+    this.aggregateReview()
   }
 
   downVote() {
