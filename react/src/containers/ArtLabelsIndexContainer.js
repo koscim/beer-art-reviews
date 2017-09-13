@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ArtLabelTile from '../components/ArtLabelTile';
-import { Link, browserHistory } from 'react-router';
 
 class ArtLabelsIndexContainer extends Component {
   constructor(props) {
@@ -28,7 +27,6 @@ class ArtLabelsIndexContainer extends Component {
       })
     })
   }
-
   render() {
     let art_labels = this.state.art_labels.map(art_label => {
       return(
@@ -44,9 +42,6 @@ class ArtLabelsIndexContainer extends Component {
       <div>
         <h1>All Art Labels!!!</h1>
         {art_labels}
-        <a href="http://localhost:3000/art_labels/new">
-          Add New Art Label
-        </a>
       </div>
     )
   }
