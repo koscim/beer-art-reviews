@@ -14,27 +14,14 @@
  *= require_self
  */
 
- #grad {
-   background: red; /* For browsers that do not support gradients */
-   background: -webkit-linear-gradient(-90deg, red, yellow); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(-90deg, red, yellow); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(-90deg, red, yellow); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(-90deg, red, yellow); /* Standard syntax */
- }
+
 body {
-   /*color: #CCCCCC;*/
-   color: #FFFFFF;
-   /*background: #d0dcc4;*/
-   /*background: #ea5a64;*/
-   font-family: 'Forum', cursive;
-   font-size: 20px;
-   margin: 0 auto;
-   background: #BF6824; /* For browsers that do not support gradients */
-   /*background: -webkit-linear-gradient(-90deg, #9a342d, #f4b218); /* For Safari 5.1 to 6.0 */*/
-   /*background: -o-linear-gradient(-90deg, #9a342d, #f4b218); /* For Opera 11.1 to 12.0 */*/
-   /*background: -moz-linear-gradient(-90deg, #9a342d, #f4b218); /* For Firefox 3.6 to 15 */*/
-   /*background: linear-gradient(-90deg, #9a342d, #f4b218); /* Standard syntax */*/
- }
+  color: #FFFFFF;
+  font-family: 'Forum', cursive;
+  font-size: 20px;
+  margin: 0 auto;
+  background: #BF6824;
+}
 a,
 a:visited {
   color: #FFFFFF;
@@ -44,7 +31,6 @@ a:visited {
   display: inline-block;
   height: 400px;
   width: 400px;
-  /*background: #218396;*/
   background: #3C3C3C;
   border-width: 5px;
   border-style: solid;
@@ -60,7 +46,6 @@ a:visited {
 
 .container {
   background: #9a342d;
-  /*background: #218396;*/
   border-width: 5px;
   border-style: solid;
   border-color: #3C3C3C;
@@ -74,13 +59,6 @@ a:visited {
   background-color: #3C3C3C;
   padding: 25px;
   border-bottom: 2px #FFFFFF solid;
-
-  .top-bar-section {
-    float: right;
-    display: block;
-    margin: -5px;
-    background-color: white;
-  }
 }
 
 .top-bar-section {
