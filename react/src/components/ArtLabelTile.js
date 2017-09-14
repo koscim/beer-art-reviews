@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
+import ReactPaginate from 'react-paginate';
+
 
 const ArtLabelTile = props => {
   let handleDelete = () => {
