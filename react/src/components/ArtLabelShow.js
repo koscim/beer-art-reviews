@@ -65,7 +65,7 @@ const ArtLabelShow = (props) => {
   return(
     <div>
       <h2>{props.art_label.name}</h2>
-      <img src={props.art_label.label_photo.url} height="200"/>
+      <img src={props.art_label.label_photo.url} height="200" className="show-size"/>
       <p>Brewery: {props.art_label.brewery ? props.art_label.brewery : "N/A"}
       <br />
       Beer Style: {props.art_label.beer_style ? props.art_label.beer_style : "N/A"}
