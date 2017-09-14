@@ -7,7 +7,7 @@ const ArtLabelTile = props => {
   }
   let button;
   if(props.currentUser){
-    if (props.currentUser.id === props.user){
+    if (props.currentUser.id === props.user || props.currentUser.role === "admin"){
       button = <button className='button' onClick={handleDelete}>Delete</button>
     } else {
       button = ""
