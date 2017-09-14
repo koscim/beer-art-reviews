@@ -1,7 +1,7 @@
 <h1>Edit <%= @review.user.username %>&#39;s Review for <%= @art_label.name %>!</h1>
 
 <div class="container">
-  
+  <%= image_tag(@art_label.label_photo) %>
   <%= form_for [@art_label, @review] do |f| %>
 
     <%= f.label :feels %>

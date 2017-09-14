@@ -1,7 +1,6 @@
 <h3>Write a Review!</h3>
-
 <div class="container">
-  
+  <%= image_tag(@art_label.label_photo) %>
   <%= form_for([@art_label, @review]) do |f| %>
 
     <%= f.label :feels %>
