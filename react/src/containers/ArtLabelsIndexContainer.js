@@ -59,9 +59,11 @@ class ArtLabelsIndexContainer extends Component {
       )
     })
     return (
-      <div>
+      <div className="container">
         <h1>All Art Labels!!!</h1>
-        {art_labels}
+        <div className="center">
+          {art_labels}
+        </div>
         <a href="http://localhost:3000/art_labels/new">
           Add New Art Label
         </a>

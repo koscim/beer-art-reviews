@@ -30,13 +30,17 @@ a:visited {
   text-decoration: none;
 }
  .tile {
+  display: inline-block;
+  height: 400px;
+  width: 400px;
   background: #218396;
   border-width: 5px;
   border-style: solid;
   border-color: #29b2bd;
   border-radius: 25px;
   padding: 20px;
-  margin: 5px;
+  margin: 25px;
+
 }
 
 .tile:hover {
@@ -77,4 +81,8 @@ a:visited {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 30px;
+}
+
+.center {
+  margin: 0 auto;
 }

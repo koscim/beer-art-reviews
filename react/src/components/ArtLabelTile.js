@@ -15,19 +15,17 @@ const ArtLabelTile = props => {
   }
 
   return (
-    <div>
-      <Link to={`/art_labels/${props.id}`}>
-        <div className="tile">
-          <p>
-            Name: {props.name}
-            <br />
-            Brewery: {props.brewery}
-            <img src={props.label_photo.url} height="200"/>
-          </p>
-        </div>
-      </Link>
-      {button}
-    </div>
+      <div className="tile">
+        <Link to={`/art_labels/${props.id}`}>
+            <p>
+              Name: {props.name}
+              <br />
+              Brewery: {props.brewery}
+              <img src={props.label_photo.url} height="200"/>
+            </p>
+        </Link>
+        {button}
+      </div>
   )
 }
 
