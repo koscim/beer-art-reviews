@@ -82,23 +82,31 @@ const ArtLabelShow = (props) => {
       <br />
       Submitted By: {props.art_label.user.username}
       </p>
-
+      <i className="fa fa-birthday-cake" aria-hidden="true"></i>
       Average Joy: {(review_score.joy/tally.joy).toFixed(1)}
       <br />
+      <i className="fa fa-heartbeat" aria-hidden="true"></i>
       Average Fear: {(review_score.fear/tally.fear).toFixed(1)}
       <br />
+      <i className="fa fa-ambulance" aria-hidden="true"></i>
       Average Disgust: {(review_score.disgust/tally.disgust).toFixed(1)}
       <br />
+      <i className="fa fa-tint" aria-hidden="true"></i>
       Average Sadness: {(review_score.sadness/tally.sadness).toFixed(1)}
       <br />
+      <i className="fa fa-fire" aria-hidden="true"></i>
       Average Anger: {(review_score.anger/tally.anger).toFixed(1)}
       <br />
+      <i className="fa fa-hand-spock-o" aria-hidden="true"></i>
       Average Cleverness: {(review_score.cleverness/tally.cleverness).toFixed(1)}
       <br />
+      <i className="fa fa-shopping-basket" aria-hidden="true"></i>
       Average Collectability: {(review_score.collectability/tally.collectability).toFixed(1)}
       <br />
+      <i className="fa fa-commenting-o" aria-hidden="true"></i>
       Average Controversiality: {(review_score.controversiality/tally.controversiality).toFixed(1)}
       <br />
+      <i className="fa fa-money" aria-hidden="true"></i>
       Average Buyability: {(review_score.buyability/tally.buyability).toFixed(1)}
     </div>
   )
