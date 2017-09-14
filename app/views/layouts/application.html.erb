@@ -17,6 +17,14 @@
           BeerArtReviews
         </div>
         <ul class="top-bar-section">
+          <% if params[:to] == 'static_pages#index' %>
+            <li>
+              <%= form_tag(art_labels_path, method: :get) do %>
+                <%= text_field_tag :term, params[:term], placeholder: "Filter Art Labels" %>
+                <%= submit_tag "Filter", name: nil %>
+              <% end %>
+            </li>
+          <% end %>
           <li><%= link_to 'Home', art_labels_path %>
           <%- if user_signed_in? -%>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
