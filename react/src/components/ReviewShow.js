@@ -12,6 +12,7 @@ class ReviewShow extends Component {
     }
     this.upVote = this.upVote.bind(this)
     this.downVote = this.downVote.bind(this)
+    this.aggregateReview = this.aggregateReview.bind(this)
   }
 
   componentDidMount() {
@@ -43,6 +44,24 @@ class ReviewShow extends Component {
   }
 
   aggregateReview(){
+    setTimeout(function(){
+      fetch(`/api/v1/art_labels/${this.props.art_label_id}/reviews/${this.props.review.id}`, {
+        credentials: 'same-origin'
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(body => {
+        let voteTotal = 0;
+        body.votes.forEach((vote) => {
+          voteTotal += parseInt(vote.vote_number)
+        })
+        this.setState({
+          votes: body.votes,
+          current_user: body.current_user,
+          voteTotal: voteTotal
+        })
+      })}.bind(this), 100)
   }
 
   upVote() {
@@ -57,8 +76,6 @@ class ReviewShow extends Component {
       body: JSON.stringify(upVotePayload)
     }).then(response => response.json())
     .then(body => {
-      let votePayload = this.state.votes.concat(upVotePayload)
-      this.setState({ votes: votePayload })
     })
     .catch((thing) => console.log("so sad"))
     this.aggregateReview()
@@ -76,10 +93,11 @@ class ReviewShow extends Component {
       body: JSON.stringify(downVotePayload)
     }).then(response => response.json())
     .then(body => {
-      let votePayload = this.state.votes.concat(1)
-      this.setState({ votes: downVotePayload })
+      let votePayload = this.state.votes.concat(upVotePayload)
+      this.setState({ votes: votePayload })
     })
     .catch((thing) => console.log("so sad"))
+    this.aggregateReview()
   }
 
   render(){
@@ -92,23 +110,23 @@ class ReviewShow extends Component {
           <br />
           Intoxication Level: {this.props.review.intoxication_level}
           <br />
-          Joy: {this.props.review.joy}
+          {this.props.review.joy ? `Joy: ${this.props.review.joy}` : "Joy: none specified"}
           <br />
-          Fear: {this.props.review.fear}
+          {this.props.review.fear ? `Fear: ${this.props.review.fear}` : "Fear: none specified"}
           <br />
-          Sadness: {this.props.review.sadness}
+          {this.props.review.sadness ? `Sadness: ${this.props.review.sadness}` : "Sadness: none specified"}
           <br />
-          Disgust: {this.props.review.disgust}
+          {this.props.review.disgust ? `Disgust: ${this.props.review.disgust}` : "Disgust: none specified"}
           <br />
-          Anger: {this.props.review.anger}
+          {this.props.review.anger ? `Anger: ${this.props.review.anger}` : "Anger: none specified"}
           <br />
-          Cleverness: {this.props.review.cleverness}
+          {this.props.review.cleverness ? `Cleverness: ${this.props.review.cleverness}` : "Cleverness: none specified"}
           <br />
-          Collectability: {this.props.review.collectability}
+          {this.props.review.collectability ? `Collectability: ${this.props.review.collectability}` : "Collectability: none specified"}
           <br />
-          Controversiality: {this.props.review.controversiality}
+          {this.props.review.controversiality ? `Controversiality: ${this.props.review.controversiality}` : "Controversiality: none specified"}
           <br />
-          Buyability: {this.props.review.buyability}
+          {this.props.review.buyability ? `Buyability: ${this.props.review.buyability}` : "Buyability: none specified"}
           <br />
           Votes: {this.state.voteTotal}
           <br />

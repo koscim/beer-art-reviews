@@ -17,6 +17,11 @@ class Api::V1::VotesController < ApplicationController
         vote_number: data["vote_number"]
       )
       render json: vote
+    elsif vote.vote_number != data["vote_number"]
+      Vote.find_by(user_id: data["user_id"]["id"], review_id: data["review_id"]).update(
+        vote_number: data["vote_number"]
+      )
+      render json: vote
     end
   end
 end
