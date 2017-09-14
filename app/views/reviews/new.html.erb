@@ -1,1 +1,42 @@
+<h3>Write a Review!</h3>
 
+<%= form_for([@art_label, @review]) do |f| %>
+
+  <%= f.label :feels %>
+  <%= f.text_field :feels %><br /><br />
+
+  <%= f.label :intoxication_level, 'Intoxication Level:' %>
+  <%= f.collection_select(:intoxication_level, [['Not Intoxicated'],['Buzzed'],['More Buzzed'],['Drunk'],['More Drunk'],['Wasted']], :first, :first) %>  <br /><br />
+
+  <%= f.label :joy, 'Joy:' %>
+  <%= f.collection_radio_buttons(:joy, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :fear, 'Fear:' %>
+  <%= f.collection_radio_buttons(:fear, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :sadness, 'Sadness:' %>
+  <%= f.collection_radio_buttons(:sadness, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :disgust, 'Disgust:' %>
+  <%= f.collection_radio_buttons(:disgust, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :anger, 'Anger:' %>
+  <%= f.collection_radio_buttons(:anger, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :cleverness, 'Cleverness:' %>
+  <%= f.collection_radio_buttons(:cleverness, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :collectability, 'Collectability:' %>
+  <%= f.collection_radio_buttons(:collectability, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :controversiality, 'Controversiality:' %>
+  <%= f.collection_radio_buttons(:controversiality, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <%= f.label :buyability, 'Buyability:' %>
+  <%= f.collection_radio_buttons(:buyability, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
+
+  <br />
+
+  <%= f.submit "Submit Review" %>
+
+<% end %>

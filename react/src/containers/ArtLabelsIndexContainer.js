@@ -5,8 +5,19 @@ class ArtLabelsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      art_labels: []
+      art_labels: [],
+      current_user: {}
     }
+    this.handleDelete = this.handleDelete.bind(this)
+  }
+
+  handleDelete(artLabelId) {
+    fetch(`http://localhost:3000/api/v1/art_labels/${artLabelId}`, {
+      method: 'DELETE',
+      credentials: 'same-origin'
+    }).then(response => response.json())
+    .catch((thing) => console.log("so sad"))
+    this.setState({art_labels: this.state.art_labels.filter(art_label => art_label.id !== artLabelId)})
   }
 
   componentDidMount() {
@@ -64,6 +75,10 @@ class ArtLabelsIndexContainer extends Component {
           id={art_label.id}
           name={art_label.name}
           brewery={art_label.brewery}
+          label_photo={art_label.label_photo}
+          deleteButton={this.handleDelete}
+          currentUser={this.state.current_user}
+          user={art_label.user_id}
         />
       )
     })

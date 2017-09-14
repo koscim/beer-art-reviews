@@ -22,12 +22,12 @@ feature 'email is sent to art label owner for new review', %Q{
 
     click_button 'Sign In'
 
-    click_link art_label.name
+    visit new_art_label_review_path(art_label)
 
     fill_in "Feels", with: "Total garbage."
     click_button "Submit Review"
-
-    expect(page).to have_content("Total garbage.")
+    
+    review = Review.find_by(feels: "Total garbage.")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end

@@ -56,8 +56,7 @@ class ArtLabelShowContainer extends Component {
         />
         <h2>Reviews:</h2>
         {reviews}
-        <h2>Create a New Review:</h2>
-        <a href={newAddress}>pants</a>
+        <a href={newAddress}><h2>Create a New Review:</h2></a>
 
         <div className="button" onClick={browserHistory.goBack} >
           Back
