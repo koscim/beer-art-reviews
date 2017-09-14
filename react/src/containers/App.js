@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute, Router, browserHistory } from 'react-router';
+import { Route, IndexRoute, Router, browserHistory, Redirect } from 'react-router';
 import ArtLabelsIndexContainer from './ArtLabelsIndexContainer';
 import ArtLabelShowContainer from './ArtLabelShowContainer';
 // import ArtLabelFormContainer from './ArtLabelFormContainer';
@@ -7,11 +7,10 @@ import ArtLabelShowContainer from './ArtLabelShowContainer';
 const App = (props) => {
   return (
     <Router history={browserHistory} >
-      <Route path='/' >
+        <Redirect from="/" to="/art_labels" />
         <IndexRoute component={ArtLabelsIndexContainer} />
         <Route exact path="/art_labels" component={ArtLabelsIndexContainer} />
         <Route path="/art_labels/:id" component={ArtLabelShowContainer} />
-      </Route>
     </Router>
   );
 }
