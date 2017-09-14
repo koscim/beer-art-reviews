@@ -61,12 +61,20 @@ a:visited {
   background-color: #3C3C3C;
   padding: 25px;
   border-bottom: 2px #FFFFFF solid;
+
+  .top-bar-section {
+    float: right;
+    display: block;
+    margin: -5px;
+    background-color: white;
+  }
 }
 
 .top-bar-section {
   float: right;
   display: block;
   margin: -5px;
+  background-color: #3C3C3C !important;
 }
 
 .top-bar-section li {
@@ -93,4 +101,8 @@ a:visited {
 
 .field {
   width: 400px;
+}
+
+.blackish-background {
+  background-color: #3C3C3C
 }
