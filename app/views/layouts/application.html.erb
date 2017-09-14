@@ -9,22 +9,16 @@
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
   </head>
 
   <body>
     <nav class="top-bar">
         <div class='top-bar-title'>
-          BeerArtReviews
+          <div>BeerArtReviews</div>
+          <div class="cursive">Where beer meets art <3</div>
         </div>
         <ul class="top-bar-section">
-          <% if params[:to] == 'static_pages#index' %>
-            <li>
-              <%= form_tag(art_labels_path, method: :get) do %>
-                <%= text_field_tag :term, params[:term], placeholder: "Filter Art Labels" %>
-                <%= submit_tag "Filter", name: nil %>
-              <% end %>
-            </li>
-          <% end %>
           <li><%= link_to 'Home', art_labels_path %>
           <%- if user_signed_in? -%>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
@@ -39,6 +33,14 @@
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             <li><%= link_to 'Sign In', new_user_session_path %></li>
           <%- end -%>
+          <% if params[:to] == 'static_pages#index' %>
+            <li>
+              <%= form_tag(art_labels_path, method: :get) do %>
+                <%= text_field_tag :term, params[:term], placeholder: "Filter Art Labels" %>
+                <%= submit_tag "Filter", name: nil, class: 'button' %>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
     </nav>
     <p class="notice"><%= notice %></p>

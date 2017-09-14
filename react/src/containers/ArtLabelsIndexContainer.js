@@ -69,7 +69,7 @@ class ArtLabelsIndexContainer extends Component {
     })
     return (
       <div className="container">
-        <h1>All Art Labels!!!</h1>
+        <div><h1>All Beer Art Labels</h1></div>
         <div className="center">
           {art_labels}
         </div>

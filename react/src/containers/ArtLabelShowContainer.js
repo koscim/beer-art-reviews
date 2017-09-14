@@ -48,16 +48,15 @@ class ArtLabelShowContainer extends Component {
 
     return(
       <div className='container'>
-        Art Label Show!!!!
         <ArtLabelShow
           key={this.state.art_label.id}
           id={this.state.art_label.id}
           art_label={this.state.art_label}
           reviews={this.state.reviews}
         />
-        <h2>Reviews:</h2>
+        <h3>Reviews:</h3>
         {reviews}
-        <a href={newAddress}><h2>Create a New Review:</h2></a>
+        <a href={newAddress}><h4>Create a New Review</h4></a>
 
         <div className="button" onClick={browserHistory.goBack} >
           Back

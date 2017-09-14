@@ -21,7 +21,6 @@ feature "users can add art label" do
     fill_in 'Container type', with: "Tall Boy"
     fill_in 'Beer description', with: "Robust flavor"
     fill_in 'Art description', with: "Art Deco"
-    fill_in 'Beer rating', with: "4"
 
     click_button "Add Art Label"
 
