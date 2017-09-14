@@ -21,22 +21,22 @@ class ArtLabelsIndexContainer extends Component {
   }
 
   componentDidMount() {
-    if (window.location.href.includes('term')) {
+    fetch(`/api/v1/art_labels/`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseBody => {
+      if (window.location.href.includes('term')) {
 
-      let searchTerm = window.location.href.substr(53).replace('+', ' ').toLowerCase()
+        let searchTerm = window.location.href.substr(53).replace('+', ' ').toLowerCase()
 
-      fetch(`/api/v1/art_labels/`)
-      .then(response => {
-        if (response.ok) {
-          return response
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-              error = new Error(errorMessage)
-          throw(error)
-        }
-      })
-      .then(response => response.json())
-      .then(responseBody => {
         responseBody.art_labels.forEach((label) => {
           if(label.name.toLowerCase().includes(searchTerm)){
             this.setState({
@@ -44,29 +44,14 @@ class ArtLabelsIndexContainer extends Component {
             })
           }
         })
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`))
-
-    } else {
-      fetch(`/api/v1/art_labels/`)
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw(error);
-        }
-      })
-      .then(response => response.json())
-      .then(responseBody => {
+      } else {
         this.setState({
           art_labels: responseBody.art_labels
         })
-      })
-    }
-
+      }
+    })
   }
+
   render() {
     let art_labels = this.state.art_labels.map(art_label => {
       return(
