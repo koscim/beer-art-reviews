@@ -21,6 +21,7 @@ const ArtLabelTile = props => {
               Name: {props.name}
               <br />
               Brewery: {props.brewery}
+              <br />
               <img src={props.label_photo.url} className="tile-size"/>
             </p>
         </Link>
