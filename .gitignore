@@ -27,3 +27,4 @@
 
 # Ignore environment variables
 .env
+*.sqlite3
