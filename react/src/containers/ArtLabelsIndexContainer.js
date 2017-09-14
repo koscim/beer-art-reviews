@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ArtLabelTile from '../components/ArtLabelTile';
-import { Link, browserHistory } from 'react-router';
 
 class ArtLabelsIndexContainer extends Component {
   constructor(props) {
@@ -22,9 +21,7 @@ class ArtLabelsIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/art_labels/`, {
-      credentials: 'same-origin'
-    })
+    fetch(`/api/v1/art_labels/`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -36,10 +33,22 @@ class ArtLabelsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(responseBody => {
-      this.setState({
-        art_labels: responseBody.art_labels,
-        current_user: responseBody.current_user
-      })
+      if (window.location.href.includes('term')) {
+
+        let searchTerm = window.location.href.substr(53).replace('+', ' ').toLowerCase()
+
+        responseBody.art_labels.forEach((label) => {
+          if(label.name.toLowerCase().includes(searchTerm)){
+            this.setState({
+              art_labels: this.state.art_labels.concat([label])
+            })
+          }
+        })
+      } else {
+        this.setState({
+          art_labels: responseBody.art_labels
+        })
+      }
     })
   }
 
