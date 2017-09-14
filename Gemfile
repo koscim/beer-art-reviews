@@ -13,7 +13,7 @@ gem 'devise'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'carrierwave'
 gem "fog-aws"
-gem 'fog'
+# gem 'fog'
 gem 'mailcatcher'
 gem 'sendgrid-ruby'
 
