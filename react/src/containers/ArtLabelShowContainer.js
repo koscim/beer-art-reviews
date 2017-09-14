@@ -53,6 +53,7 @@ class ArtLabelShowContainer extends Component {
           key={this.state.art_label.id}
           id={this.state.art_label.id}
           art_label={this.state.art_label}
+          reviews={this.state.reviews}
         />
         <h2>Reviews:</h2>
         {reviews}
