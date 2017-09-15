@@ -25,7 +25,7 @@ Beer Art Reviews is a site where the love of beer and art intersect. Upload your
 
 Navigate to <https://beer-art-reviews.herokuapp.com/> in your browser
 
-![beer-art-reviews](app/assets/images/Screenshot Beer Art Reviews 25.png "Beer Art Reviews")
+![beer-art-reviews](https://s3.amazonaws.com/beer-art-reviews-production/uploads/Screenshots/Screenshot+Beer+Art+Reviews+25.png "Beer Art Reviews")
 
 ## Installation
 
