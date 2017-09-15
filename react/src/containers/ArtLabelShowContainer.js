@@ -32,6 +32,7 @@ class ArtLabelShowContainer extends Component {
   }
 
   render() {
+
     let reviews = this.state.reviews.map(review => {
       return(
         <ReviewShow
@@ -54,6 +55,7 @@ class ArtLabelShowContainer extends Component {
           art_label={this.state.art_label}
           reviews={this.state.reviews}
         />
+
         <h3>Reviews:</h3>
         {reviews}
         <a href={newAddress}><h4>Create a New Review</h4></a>

@@ -95,14 +95,14 @@ class ArtLabelsIndexContainer extends Component {
     })
     return (
       <div className="container">
-        <form onSubmit={this.handleSearch}>
+        <form onSubmit={this.handleDeleteleSearch}>
           <TextField
             content={this.state.search}
             label="Search"
             name="search"
             handlerFunction={this.handleInputChange}
           />
-          <input type="submit" value="Submit"/>
+          <input className="button" type="submit" value="Submit"/>
         </form>
         <div><h1>All Beer Art Labels</h1></div>
         <div className="center">

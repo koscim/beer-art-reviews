@@ -62,10 +62,11 @@ const ArtLabelShow = (props) => {
       tally.buyability += 1
     }
   })
+
   return(
     <div>
       <h2>{props.art_label.name}</h2>
-      <img src={props.art_label.label_photo.url} height="200"/>
+      <img src={props.art_label.label_photo.url} className="show-size"/>
       <p>Brewery: {props.art_label.brewery ? props.art_label.brewery : "N/A"}
       <br />
       Beer Style: {props.art_label.beer_style ? props.art_label.beer_style : "N/A"}
@@ -79,6 +80,7 @@ const ArtLabelShow = (props) => {
       Art Description: {props.art_label.art_description ? props.art_label.art_description : "N/A"}
       <br />
       Submitted By: {props.art_label.user ? props.art_label.user.username : "N/A"}
+        {props.art_label.user.profile_photo ? <img src={props.art_label.user.profile_photo.url} className="profile-size"/> : "" }
       </p>
       <i className="fa fa-birthday-cake" aria-hidden="true"></i>
       Average Joy: {review_score.joy > 0 ? (review_score.joy/tally.joy).toFixed(1) : "N/A"}
