@@ -42,7 +42,7 @@ class ArtLabelsIndexContainer extends Component {
     .then(responseBody => {
         let art_labels = [];
         responseBody.art_labels.forEach((label) => {
-          if(label.name.toLowerCase().includes(this.state.search.toLowerCase())){
+          if(label.name.toLowerCase().includes(this.state.search.toLowerCase()) || label.brewery.toLowerCase().includes(this.state.search.toLowerCase())){
             art_labels = art_labels.concat(label)
           }
         })
