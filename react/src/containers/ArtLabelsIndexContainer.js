@@ -95,7 +95,7 @@ class ArtLabelsIndexContainer extends Component {
     })
     return (
       <div className="container">
-        <form onSubmit={this.handleDeleteleSearch}>
+        <form onSubmit={this.handleSearch}>
           <TextField
             content={this.state.search}
             label="Search"
