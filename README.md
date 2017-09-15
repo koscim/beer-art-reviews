@@ -10,7 +10,7 @@ Beer Art Reviews is a site where the love of beer and art intersect. Upload your
 * [React 15.6.1](https://github.com/facebook/react/releases)
 * [React-Router 3.0.5](https://github.com/ReactTraining/react-router)
 * [AWS](https://aws.amazon.com/)
-* [Postgres](http://postgresapp.com/documentation/)
+* [PostgreSQL](http://postgresapp.com/documentation/)
 
 ### Testing
 * [Rspec-Rails 3.5](https://relishapp.com/rspec/rspec-rails/v/3-5/docs)
