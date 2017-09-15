@@ -22,6 +22,7 @@ body {
   margin: 0 auto;
   background: #BF6824;
 }
+
 a,
 a:visited {
   color: #FFFFFF;
@@ -96,8 +97,11 @@ a:visited {
 }
 
 .button {
-
   background-color: grey;
+}
+
+.hidden-button {
+  visibility: hidden;
 }
 
 .left {
