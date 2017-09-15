@@ -1,33 +1,35 @@
 <h1 class="center-text">New Art Label!</h1>
 <div class="container">
   <%= image_tag(@art_label.label_photo, height: "200") %>
-  <%= form_for @art_label do |f| %>
+  <div class="form-tile">
+    <%= form_for @art_label do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %><br />
+      <%= f.label :name, class: "white-text" %>
+      <%= f.text_field :name, class: "short-field" %><br />
 
-    <%= f.label :label_photo, 'Art Label Photo' %>
-    <%= f.file_field :label_photo %><br />
+      <%= f.label :label_photo, 'Art Label Photo', class: "white-text" %>
+      <%= f.file_field :label_photo %><br />
 
-    <%= f.label :brewery %>
-    <%= f.text_field :brewery %><br />
+      <%= f.label :brewery, class: "white-text" %>
+      <%= f.text_field :brewery, class: "short-field" %><br />
 
-    <%= f.label :beer_style %>
-    <%= f.text_field :beer_style %><br />
+      <%= f.label :beer_style, class: "white-text" %>
+      <%= f.text_field :beer_style, class: "short-field" %><br />
 
-    <%= f.label :art_style %>
-    <%= f.text_field :art_style %><br />
+      <%= f.label :art_style, class: "white-text" %>
+      <%= f.text_field :art_style, class: "short-field" %><br />
 
-    <%= f.label :container_type %>
-    <%= f.text_field :container_type %><br />
+      <%= f.label :container_type, class: "white-text" %>
+      <%= f.text_field :container_type, class: "short-field" %><br />
 
-    <%= f.label :beer_description %>
-    <%= f.text_field :beer_description %><br />
+      <%= f.label :beer_description, class: "white-text" %>
+      <%= f.text_field :beer_description, class: "short-field" %><br />
 
-    <%= f.label :art_description %>
-    <%= f.text_field :art_description %><br />
+      <%= f.label :art_description, class: "white-text" %>
+      <%= f.text_field :art_description, class: "short-field" %><br />
 
-    <%= f.submit "Add Art Label" %>
+      <%= f.submit "Add Art Label", class: "button" %>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>

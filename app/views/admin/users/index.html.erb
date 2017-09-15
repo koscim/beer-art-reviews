@@ -1,17 +1,19 @@
 <h1>Users</h1>
 
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
-      <p>Role: <%= user.role %></p>
-      <%= button_to "Delete #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %> </li>
-      <% if user.role == 'member' %>
-        <%= button_to "Promote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put %> </li>
-      <% else %>
-        <%= button_to "Demote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put %> </li>
-      <% end %>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.first_name %> <%= user.last_name %> - <%= user.username %>
+        <p>Role: <%= user.role %></p>
+        <%= button_to "Delete #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %> </li>
+        <% if user.role == 'member' %>
+          <%= button_to "Promote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put, class: "button" %> </li>
+        <% else %>
+          <%= button_to "Demote #{user.username}?", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :put, class: "button" %> </li>
+        <% end %>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to "Back", root_path %>

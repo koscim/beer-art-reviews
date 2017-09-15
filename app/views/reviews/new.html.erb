@@ -1,44 +1,44 @@
 <h3>Write a Review!</h3>
 <div class="container">
-  <%= image_tag(@art_label.label_photo) %>
+  <%= image_tag(@art_label.label_photo, class: "show-size") %>
   <%= form_for([@art_label, @review]) do |f| %>
 
-    <%= f.label :feels %>
-    <%= f.text_field :feels %><br /><br />
+    <%= f.label :feels, class: "white-text" %>
+    <%= f.text_field :feels, class: "short-field" %><br />
 
-    <%= f.label :intoxication_level, 'Intoxication Level:' %>
+    <%= f.label :intoxication_level, 'Intoxication Level:', class: "white-text" %>
     <%= f.collection_select(:intoxication_level, [['Not Intoxicated'],['Buzzed'],['More Buzzed'],['Drunk'],['More Drunk'],['Wasted']], :first, :first) %>  <br /><br />
 
-    <%= f.label :joy, 'Joy:' %>
+    <%= f.label :joy, 'Joy:', class: "white-text" %>
     <%= f.collection_radio_buttons(:joy, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :fear, 'Fear:' %>
+    <%= f.label :fear, 'Fear:', class: "white-text" %>
     <%= f.collection_radio_buttons(:fear, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :sadness, 'Sadness:' %>
+    <%= f.label :sadness, 'Sadness:', class: "white-text" %>
     <%= f.collection_radio_buttons(:sadness, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :disgust, 'Disgust:' %>
+    <%= f.label :disgust, 'Disgust:', class: "white-text" %>
     <%= f.collection_radio_buttons(:disgust, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :anger, 'Anger:' %>
+    <%= f.label :anger, 'Anger:', class: "white-text" %>
     <%= f.collection_radio_buttons(:anger, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :cleverness, 'Cleverness:' %>
+    <%= f.label :cleverness, 'Cleverness:', class: "white-text" %>
     <%= f.collection_radio_buttons(:cleverness, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :collectability, 'Collectability:' %>
+    <%= f.label :collectability, 'Collectability:', class: "white-text" %>
     <%= f.collection_radio_buttons(:collectability, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :controversiality, 'Controversiality:' %>
+    <%= f.label :controversiality, 'Controversiality:', class: "white-text" %>
     <%= f.collection_radio_buttons(:controversiality, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
-    <%= f.label :buyability, 'Buyability:' %>
+    <%= f.label :buyability, 'Buyability:', class: "white-text" %>
     <%= f.collection_radio_buttons(:buyability, [[1],[2],[3],[4],[5]], :first, :first) %><br /><br />
 
     <br />
 
-    <%= f.submit "Submit Review" %>
+    <%= f.submit "Submit Review", class: "button" %>
 
   <% end %>
 </div>
