@@ -25,7 +25,7 @@ Beer Art Reviews is a site where the love of beer and art intersect. Upload your
 
 Navigate to <https://beer-art-reviews.herokuapp.com/> in your browser
 
-![beer-art-reviews](https://s3.amazonaws.com/beer-art-reviews-production/uploads/Screenshots/Screenshot+Beer+Art+Reviews+25.png "Beer Art Reviews")
+![beer-art-reviews](https://s3.amazonaws.com/beer-art-reviews-production/uploads/Screenshots/Screenshot+Beer+Art+Reviews+Now+With+Bubbles.png "Beer Art Reviews")
 
 ## Installation
 
@@ -53,13 +53,11 @@ $ rake             # run tests
 * Deeper Search Function
 * Create a better navigation system (tree view)
 
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/koscim/beer-art-reviews. Use the [fork-and-branch](http://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) workflow to contribute.
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 
 ## License
 
