@@ -20,8 +20,9 @@ body {
   font-family: 'Forum', cursive;
   font-size: 20px;
   margin: 0 auto;
-  background: #BF6824;
+  background: url(http://oofindustries.net/images/bubbles-beer.jpg);
 }
+
 a,
 a:visited {
   color: #FFFFFF;
@@ -96,8 +97,11 @@ a:visited {
 }
 
 .button {
-
   background-color: grey;
+}
+
+.hidden-button {
+  visibility: hidden;
 }
 
 .left {

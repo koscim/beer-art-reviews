@@ -10,7 +10,7 @@ const ArtLabelTile = props => {
     if (props.currentUser.id === props.user || props.currentUser.role === "admin"){
       button = <button className='button' onClick={handleDelete}>Delete</button>
     } else {
-      button = ""
+      button = <button className='hidden-button button'>Delete</button>
     }
   }
 
