@@ -16,7 +16,7 @@ class ArtLabelsIndexContainer extends Component {
   }
 
   handleDelete(artLabelId) {
-    fetch(`http://localhost:3000/api/v1/art_labels/${artLabelId}`, {
+    fetch(`/api/v1/art_labels/${artLabelId}`, {
       method: 'DELETE',
       credentials: 'same-origin'
     }).then(response => response.json())
