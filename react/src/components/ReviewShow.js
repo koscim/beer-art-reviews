@@ -104,7 +104,7 @@ class ReviewShow extends Component {
     return(
       <div>
         <p>
-          {this.props.username}
+          {this.props.username} {this.props.review.user.profile_photo ? <img src={this.props.review.user.profile_photo.url} className="profile-size"/> : "" }
           <br />
           Feels: {this.props.review.feels}
           <br />

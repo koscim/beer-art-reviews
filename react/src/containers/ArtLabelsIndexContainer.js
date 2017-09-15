@@ -102,7 +102,7 @@ class ArtLabelsIndexContainer extends Component {
             name="search"
             handlerFunction={this.handleInputChange}
           />
-          <input type="submit" value="Submit"/>
+          <input className="button" type="submit" value="Submit"/>
         </form>
         <div><h1>All Beer Art Labels</h1></div>
         <div className="center">
