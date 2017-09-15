@@ -6,6 +6,8 @@ const ArtLabelTile = props => {
     props.deleteButton(props.id)
   }
   let button;
+  let editButton;
+
   if(props.currentUser){
     if (props.currentUser.id === props.user || props.currentUser.role === "admin"){
       button = <button className='button' onClick={handleDelete}>Delete</button>
@@ -13,6 +15,16 @@ const ArtLabelTile = props => {
       button = <button className='hidden-button button'>Delete</button>
     }
   }
+
+  if(props.currentUser){
+    if (props.currentUser.id === props.user || props.currentUser.role === "admin"){
+      editButton = <a href={`/art_labels/${props.id}/edit`} className='button'>Edit</a>
+    } else {
+      editButton = <a className='hidden-button button'>Edit</a>
+    }
+  }
+
+
 
   return (
       <div className="tile">
@@ -25,7 +37,7 @@ const ArtLabelTile = props => {
               <img src={props.label_photo.url} className="tile-size"/>
             </p>
         </Link>
-        {button}
+        {button}  {editButton}
       </div>
   )
 }
