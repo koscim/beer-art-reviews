@@ -12,7 +12,7 @@ class ArtLabelShowContainer extends Component {
           url: ""
         },
         user: {
-          username: "",
+          username: ""
         }
       },
       reviews: []
@@ -46,7 +46,7 @@ class ArtLabelShowContainer extends Component {
     })
 
     let newAddress = `${this.state.art_label.id}/reviews/new`
-debugger
+
     return(
       <div className='container'>
         <ArtLabelShow
